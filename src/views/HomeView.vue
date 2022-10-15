@@ -2,8 +2,10 @@
   <div class="home-view-container">
     <h1>Adopt a new best friend.</h1>
     <p>Total pets: {{ animalsCount }}</p>
-    <button class="btn btn-primary" @click="togglePetForm">Add New Pet</button>
-    <b-form @submit.prevent="handleSubmit" v-if="showPetForm">
+    <button class="btn btn-primary mb-2" @click="togglePetForm">
+      Add New Pet
+    </button>
+    <b-form @submit.prevent="handleSubmit" v-if="showPetForm" class="addForm">
       <b-form-group id="input-group-1" label="Pet's Name:" label-for="input-1">
         <b-form-input
           id="input-1"
@@ -18,6 +20,7 @@
           id="input-2"
           v-model="formData.species"
           :options="['cats', 'dogs']"
+          class="w-100"
           required
         ></b-form-select>
       </b-form-group>
@@ -31,7 +34,7 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="submit" variant="primary" class="mt-2">Submit</b-button>
     </b-form>
   </div>
 </template>
@@ -80,3 +83,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.addForm {
+  margin: 0 auto;
+  max-width: 400px;
+}
+</style>
