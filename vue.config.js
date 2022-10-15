@@ -1,5 +1,5 @@
 const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: "/vue-adopt-pet/",
+  publicPath: "/vue-adopt-pets/",
 });
